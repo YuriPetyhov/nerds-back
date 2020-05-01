@@ -28,8 +28,13 @@ app.post('', (req, res) => {
         .catch(err => console.log({err}))
 
 });
+app.get('/ ', (req, res) => {
+
+        res.send('main')
+
+});
 // will find all items
-app.get('/catalog', (req, res) => {
+app.get('/heroku ', (req, res) => {
     Product.find({}, (err, items) => {
         res.send(items)
     })
