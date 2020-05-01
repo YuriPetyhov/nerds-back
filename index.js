@@ -32,7 +32,7 @@ app.get('', (req, res) => {
         res.send('main')
 });
 // will find all items
-app.get('/heroku ', (req, res) => {
+app.get('/catalog ', (req, res) => {
     Product.find({}, (err, items) => {
         res.send(items)
     })
