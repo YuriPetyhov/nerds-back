@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
+const port = process.env.PORT || 3000;
 
 const ProductSchema = new Schema({
     img: String,
@@ -54,7 +54,7 @@ app.get("/catalog/:type", (req, res) => {
          res.send(item)
      } )
 });
-app.listen(process.env.PORT || 3000, () => console.log('SERVER STARTED ON 300'));
+app.listen(port, () => console.log('SERVER STARTED ON 300'));
 mongoose.connect('mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority',)
     .then(client => console.log('DATABASE CONNECTED'))
     .catch(err => console.log(err));
