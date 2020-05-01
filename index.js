@@ -28,10 +28,8 @@ app.post('', (req, res) => {
         .catch(err => console.log({err}))
 
 });
-app.get('/ ', (req, res) => {
-
+app.get('', (req, res) => {
         res.send('main')
-
 });
 // will find all items
 app.get('/heroku ', (req, res) => {
