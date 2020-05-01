@@ -32,13 +32,13 @@ app.get('', (req, res) => {
         res.send('main')
 });
 // will find all items
-app.get('/catalog ', (req, res) => {
+app.get('catalog ', (req, res) => {
     Product.find({}, (err, items) => {
         res.send(items)
     })
 });
 
-app.get("/catalog/:type", (req, res) => {
+app.get("catalog/:type", (req, res) => {
     console.log(req.params)
      Product.find({...req.params}, (err, item) => {
         if (err) {
