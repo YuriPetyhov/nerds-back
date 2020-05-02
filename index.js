@@ -52,7 +52,8 @@ app.get("catalog/:type", (req, res) => {
          res.send(item)
      } )
 });
-app.listen(port, () => console.log('SERVER STARTED ON 300'));
+
 mongoose.connect('mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority',)
     .then(client => console.log('DATABASE CONNECTED'))
+    .then(client => app.listen(port, () => console.log(`SERVER STARTED ON ${port}`)))
     .catch(err => console.log(err));
