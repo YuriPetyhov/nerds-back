@@ -52,8 +52,8 @@ app.get("catalog/:type", (req, res) => {
          res.send(item)
      } )
 });
-
-mongoose.connect('mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority',)
+app.listen(port, () => console.log(`SERVER STARTED ON ${port}`));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority',)
     .then(client => console.log('DATABASE CONNECTED'))
-    .then(client => app.listen(port, () => console.log(`SERVER STARTED ON ${port}`)))
+
     .catch(err => console.log(err));
