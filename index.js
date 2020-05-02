@@ -25,7 +25,7 @@ app.get('/catalog', (req, res) => {
     })
 });
 app.get('/catalog/:type', (req, res) => {
-    Product.findOne({type: req.params.type}, (err, item) => {
+    Product.find({type: req.params.type}, (err, item) => {
         if(err) {
             console.log('smth went wrong');
             return
