@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 });
 // will find all items
 app.get('/catalog', (req, res) => {
-
+    res.send("items")
     Product.find({}, (err, items) => {
         res.send(items)
     })
