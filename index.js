@@ -41,7 +41,7 @@ app.get('/catalog', (req, res) => {
 });
 
 app.get("catalog/:type", (req, res) => {
-     Product.find({...req.params}, (err, item) => {
+     Product.find({type:req.params.type}, (err, item) => {
         if (err) {
             res.send("Smth went wrong");
             return
