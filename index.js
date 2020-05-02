@@ -35,7 +35,6 @@ app.get('/', (req, res) => {
 });
 // will find all items
 app.get('/catalog', (req, res) => {
-
     Product.find({}, (err, items) => {
         res.send(items)
     })
@@ -55,7 +54,7 @@ app.get("catalog/:type", (req, res) => {
      } )
 });
 app.listen(port, () => console.log(`SERVER STARTED ON ${port}`));
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority',)
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb+srv://nerds:132445@cluster0-enzzy.mongodb.net/test?retryWrites=true&w=majority')
     .then(client => console.log('DATABASE CONNECTED'))
 
     .catch(err => console.log(err));
