@@ -29,11 +29,13 @@ app.post('', (req, res) => {
 
 });
 app.get('/', (req, res) => {
-        res.send('main')
+    Product.find({}, (err, items) => {
+        res.send(items)
+    })
 });
 // will find all items
 app.get('/catalog', (req, res) => {
-    res.send("items")
+
     Product.find({}, (err, items) => {
         res.send(items)
     })
